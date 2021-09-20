@@ -4,6 +4,9 @@ import InputTodo from "./InputTodo"
 import TodosList from "./TodosList"
 import { v4 as uuidv4 } from "uuid"
 import { Route, Switch } from "react-router-dom"
+import About from "../pages/About"
+import NotMatch from "../pages/NotMatch"
+import Navbar from "./Navbar"
 
 const TodoContainer = () => {
   const getInitialTodos = () => {
@@ -65,20 +68,31 @@ const TodoContainer = () => {
   }
 
   return (
-    <Route exact path="/">
-      <div className="container">
-        <div className="inner">
-          <Header />
-          <InputTodo addTodoProps={addTodoItem} />
-          <TodosList
-            todos={todos}
-            handleChangeProps={handleChange}
-            deleteTodoProps={delTodo}
-            setUpdate={setUpdate}
-          />
+    <React.Fragment>
+    <Navbar />
+    <Switch>
+      <Route exact path="/">
+        <div className="container">
+          <div className="inner">
+            <Header />
+            <InputTodo addTodoProps={addTodoItem} />
+            <TodosList
+              todos={todos}
+              handleChangeProps={handleChange}
+              deleteTodoProps={delTodo}
+              setUpdate={setUpdate}
+            />
+          </div>
         </div>
-      </div>
-    </Route>
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="*">
+        <NotMatch />
+      </Route>
+  </Switch>
+  </React.Fragment>
   )
 }
 
