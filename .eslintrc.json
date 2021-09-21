@@ -21,7 +21,7 @@
     "no-shadow": "off"
   },
   "ignorePatterns": [
-    "dist/",
+    "public/",
     "build/"
   ]
 }
