@@ -1,10 +1,14 @@
+/* eslint-disable */
 import React, { useState } from 'react';
+
 import { NavLink } from 'react-router-dom';
+
 import { MdClose } from 'react-icons/md';
 import { FiMenu } from 'react-icons/fi';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
   const links = [
     {
       id: 1,
@@ -19,7 +23,7 @@ const Navbar = () => {
   ];
 
   const handleToggle = () => {
-    setNavbarOpen((prev) => !prev);
+    setNavbarOpen(!navbarOpen);
   };
 
   const closeMenu = () => {
@@ -28,12 +32,20 @@ const Navbar = () => {
 
   return (
     <nav className="navBar">
-      <button onClick={handleToggle} type="button">
-        {navbarOpen ? (
-          <MdClose style={{ color: '#fff', width: '40px', height: '40px' }} />
-        ) : (
-          <FiMenu style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
-        )}
+      <button onClick={handleToggle}>
+        {
+          navbarOpen
+            ? (
+              <MdClose
+                style={{ color: '#fff', width: '40px', height: '40px' }}
+              />
+            )
+            : (
+              <FiMenu
+                style={{ color: '#7b7b7b', width: '40px', height: '40px' }}
+              />
+            )
+        }
       </button>
       <ul className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}>
         {links.map((link) => (

@@ -22,7 +22,7 @@ class InputTodo extends Component {
     } else {
       alert('Please write item');
     }
-  }
+  };
 
   render() {
     return (

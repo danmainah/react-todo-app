@@ -4,10 +4,12 @@ import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
+  const [editing, setEditing] = useState(false);
+
   useEffect(() => () => {
+    console.log('Cleaning up...');
   }, []);
 
-  const [editing, setEditing] = useState(false);
   const handleEditing = () => {
     setEditing(true);
   };
@@ -55,9 +57,7 @@ const TodoItem = (props) => {
         style={editMode}
         className={styles.textInput}
         value={title}
-        onChange={(e) => {
-          props.setUpdate(e.target.value, id);
-        }}
+        onChange={(e) => { props.setUpdate(e.target.value, id); }}
         onKeyDown={handleUpdatedDone}
       />
     </li>

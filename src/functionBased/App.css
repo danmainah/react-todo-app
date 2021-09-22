@@ -64,16 +64,12 @@ body {
   border: none;
 }
 
-.input-submit svg {
-  color: darkcyan;
-  font-size: 20px;
-  margin-top: 2px;
-}
-
 .active-link {
   color: orangered;
   text-decoration: underline;
 }
+
+/* sidebar Nav */
 
 .navBar {
   position: relative;
@@ -85,8 +81,10 @@ body {
   top: 40px;
   z-index: 10;
   cursor: pointer;
+  /* addition */
   background: transparent;
   border: none;
+  outline: none;
 }
 
 .menuNav {
@@ -115,11 +113,14 @@ a {
   color: #3fffd2;
   text-transform: uppercase;
   font-weight: bold;
+  outline: none;
 }
 
 .menuNav li:first-child {
   margin-top: 7rem;
 }
+
+/* about page */
 
 .about__content {
   padding: 8rem 40px;
