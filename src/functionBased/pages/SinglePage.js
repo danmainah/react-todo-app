@@ -13,7 +13,7 @@ const SinglePage = () => {
       slug: 'about-author',
       title: 'About the Author',
       description:
-      'This app was developed by Ibas Majid, a self taught web developer and a technical writer. He is opened to freelance Gig. So go ahead and connect with ibas on Twitter @ibaslogic.',
+      'This app was developed by Daniel. He is opened to freelance Gig. So go ahead and connect with me on linked in here is the link www.linkedin.com/in/daniel-maina-315a38191',
     },
   ];
 
